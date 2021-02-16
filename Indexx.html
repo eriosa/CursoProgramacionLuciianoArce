@@ -9,15 +9,26 @@
 <body>
     <h1 id='cabecero'>Ejemplo Js y Html</h1>
      <p id='parrafo'>Saludos desde el dom</p>
+     <p id='parrafo'>Saludos desde el dom numero 2</p>
     <script>
-        let cabecero = document.getElementById('cabecero');  //se accede al texto htmlcon ineer
-        console.log(`valor de cabecero : ${cabecero.innerHTML}`);
-        cabecero.innerHTML = 'nuevo cabecero modificado';
+        /*let cabecero = document.getElementById('cabecero');  //se accede al texto htmlcon ineer
+        //console.log(`valor de cabecero : ${cabecero.innerHTML}`);
+        //cabecero.innerHTML = 'nuevo cabecero modificado';
 
         let parrafo = document.getElementById('parrafo');  //dos maneras de hacerlo con/sin templete
         console.log("el parrafo dice " + parrafo);
+        parrafo.innerHTML = 'nuevo parrafo modificado';*/
+
+        let parrafo = document.getElementsByTagName('p') //obtiene los datos por etiquetas y no por ids
+        console.log(`N# deparrafos ${parrafo.length}`);
         parrafo.innerHTML = 'nuevo parrafo modificado';
-        
+        for (let i = 0; i <parrafo.length; i++) {
+            console.log(`${i} - ${parrafo[i].innerHTML}`);
+            
+        }
+        //con queryselectorall recuperas parrafos o titulos que ademas tengan aplicado un elemento de css
     </script>
+
+    
 </body>
 </html>
