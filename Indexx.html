@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejemplo de formulario con JS</title>
-</head>
-<body>
-   <form id="form">
-       nombre : <input type="text" nombre = "nombre" value="juan">
-       <br>
-       apellido : <input type="text" apellido = "apellido" value= "ortiz"> 
-       <br>
-   </form> 
-   <button onclick='mostrarValores()'>MOSTRAR</button>
-   <div id="valor"></div>
-   <script>
-       function mostrarValores() {
-           let formulario = document.forms['form']; 
-           let texto = '';
-           /*for (let elemento of formulario) {
-              texto += elemento.value + '<br/>'
-               
-            ACCEDIENDO AL ARREGLO POR VALORES SEPARADOS}*/
-            let nom = formulario['nombre']; //se crea una variable y se accede al arreglo formulario y pides el dato que deseas jalar
+  </head>
+  <body>
+    <script>
+      /*let monto1 = prompt("ingresa la cantidad de dinero que tienes");
+      let monto1 = parseFloat(monto1);
+      if (monto1 >= 0.6 && monto1 <= 9) {
+        alert("agua");
+        alert("y te sobra" + (monto1 - 0.6));
+      } else if (monto1 >= 1 && monto1 <= 1.6) {
+        alert("crema");
+      } else if (monto1 >= 1.6 && monto1 <= 1.7) {
+        alert("heladix");
+      } else {
+        alert("no te alcanza para nada");
+      }
+      ------WHILE FOR  BREAK
+      let numero = 0;
 
-            let ap = formulario['apellido'];
+      while (numero < 100) {
+        numero++;
+        document.write(numero);
+        if (numero == 15) {
+          break ;
+          
+        }
+      }
+      //----------FOR---- la variable se declara dentro
+      for (let i= 0;  i<10 ; i++) {
+        
+        if (i == 5) { //break corta hasta la condicional y continue salta lo que hay en la condicional
+          continue;
+        }
+        document.write(i);
+      }
+      // FOR IN
+     let animales = ["gato","perro","pajaro"];
 
-            texto = nom.value + '<br/>' + ap.value;
+     for(otro in animales){ //in devuelve la posicion de lo que hay en el arreglo 
+      document.write(otro + "<br>");
+     }
+    //for of
+     document.write("<br>");
 
-            document.getElementById("valor").innerHTML = texto; // inner modificas el titulo del html
-       }
-   </script>    
-    
-</body>
+     for(otro of animales){ //devuelve el valor de la posicion
+      document.write(otro + "<br>");
+     }*/
+     //label
+     
+
+
+    </script>
+  </body>
 </html>
