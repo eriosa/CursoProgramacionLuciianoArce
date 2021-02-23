@@ -8,53 +8,185 @@
   </head>
   <body>
     <script>
-      /*let monto1 = prompt("ingresa la cantidad de dinero que tienes");
-      let monto1 = parseFloat(monto1);
-      if (monto1 >= 0.6 && monto1 <= 9) {
-        alert("agua");
-        alert("y te sobra" + (monto1 - 0.6));
-      } else if (monto1 >= 1 && monto1 <= 1.6) {
-        alert("crema");
-      } else if (monto1 >= 1.6 && monto1 <= 1.7) {
-        alert("heladix");
-      } else {
-        alert("no te alcanza para nada");
-      }
-      ------WHILE FOR  BREAK
-      let numero = 0;
+        /*let monto1 = prompt("ingresa la cantidad de dinero que tienes");
+        let monto1 = parseFloat(monto1);
+        if (monto1 >= 0.6 && monto1 <= 9) {
+          alert("agua");
+          alert("y te sobra" + (monto1 - 0.6));
+        } else if (monto1 >= 1 && monto1 <= 1.6) {
+          alert("crema");
+        } else if (monto1 >= 1.6 && monto1 <= 1.7) {
+          alert("heladix");
+        } else {
+          alert("no te alcanza para nada");
+        }
+        ------WHILE FOR  BREAK
+        let numero = 0;
 
-      while (numero < 100) {
-        numero++;
-        document.write(numero);
-        if (numero == 15) {
-          break ;
+        while (numero < 100) {
+          numero++;
+          document.write(numero);
+          if (numero == 15) {
+            break ;
+
+          }
+        }
+        //----------FOR---- la variable se declara dentro
+        for (let i= 0;  i<10 ; i++) {
+
+          if (i == 5) { //break corta hasta la condicional y continue salta lo que hay en la condicional
+            continue;
+          }
+          document.write(i);
+        }
+        // FOR IN
+       let animales = ["gato","perro","pajaro"];
+
+       for(otro in animales){ //in devuelve la posicion de lo que hay en el arreglo
+        document.write(otro + "<br>");
+       }
+      //for of
+       document.write("<br>");
+
+       for(otro of animales){ //devuelve el valor de la posicion
+        document.write(otro + "<br>");
+       }
+       //label
+       //------------ FUNCION
+       //MANERAS DE ESCRIBIRLA
+
+       function saludar() {
+         return 3; //lo que retorna la funcion, no lo que imprime. aqui se termina la funcion
+         }
+
+       let saludo = saludar();
+       alert(saludo);
+       saludar();
+
+       // FUNCION CON PARAMETROS
+
+       function suma(n1,n2) {
+         let resultado = n1 + n2;
+         return resultado;
+       }
+       let res = suma(3,3);
+       document.write(res);
+      //FUNCION FLECHA
+       const saludar = (aqui van los parametros, si es solo uno no van los parentesis)=>{
+
+       }
+      saludar();
+      //PROBLEMA DEL CAPITULO 2 DEL CURSO DALTO
+
+      let free = false;
+
+      const ValidarCliente = (time)=>{
+
+        let edad = prompt("cual es tu edad");
+
+        if (edad >= 18) {
+
+          if (time >= 2 && time<=7 && free == false) {
+            alert("puedes pasar gratis ya son despues de las 2am");
+            free = true;
+          }
+
+          else{
+            alert(`son las ${time}:00 puedes pasar pero tienes que pagar`);
+          }
+       } 
+
+       else {
+          alert("no puedes pasar");}
+
+       }
+
+       ValidarCliente(9);
+       ValidarCliente(2);
+       ValidarCliente(6);
+       // PROBLEMA 2 DEL CAPITULO 2 DE DALTO 
+
+       let cantidad = prompt("cuantos alumnos son");
+       let alumnoTotal = [];
+       for (let i = 0;  i < cantidad; i++) {
+         alumnoTotal[i] = [prompt("nombre del alumno" + (i+1)),0];
+       }
+
+       const tomarLista = (nom,p) =>{
+          let presencia = prompt(nom);
+          if (presencia == "p" || presencia == "P") {
+            alumnoTotal[p][1]++; // se selecciona un elemento de un array que esta dentro de otro array
+          }
+          }
+
+          for (i = 0; i < 5; i++) {
+          for(alumno in alumnoTotal){
+            tomarLista(alumnoTotal[alumno][0],alumno);
+          }
+        }
+          for(alumno in alumnoTotal){
+            let result = `${alumnoTotal[alumno][0]}:<br>
+            __________asistencias: ${alumnoTotal[alumno][1]}<br>
+            __________ausentes : ${5 - alumnoTotal[alumno][1]}`;
           
-        }
-      }
-      //----------FOR---- la variable se declara dentro
-      for (let i= 0;  i<10 ; i++) {
+          if (5 - alumnoTotal[alumno][1] > 2){
+            result  += "reprobado por faltas";
+          }
+          else{
+            result += "<br><br>"
+          }
+            document.write(result)
+          }*/
+          //3er EJERCISIO DE DALTO CAP 2
+
+
+
+
+    const sumar  = (num1, num2) =>{
+      return parseInt(num1) + parseInt(num2);
+    }
+    const restar  = (num1, num2) =>{
+      return parseInt(num1) - parseInt(num2);
+    }
+    const multi  = (num1, num2) =>{
+      return parseInt(num1) * parseInt(num2);
+    }
+    const dividir  = (num1, num2) =>{
+      return parseInt(num1) / parseInt(num2);
+    }
+
+    alert("que operacion deseas realizar ?")
+    let op = prompt("1.- suma, 2.- resta 3.-multiplicacion, 4.-Division");
+
+    if (op == 1) {
+      let numero1 = prompt("ingrese el primer numero para sumar");
+      let numero2 = prompt("ingrese el segundo numero para sumar");
+      let result = sumar(numero1, numero2);
+      alert(`el resultado de la suma es: ${result}`);
+    }
+    else if (op == 2) {
+      let numero1 = prompt("ingrese el primer numero para restar");
+      let numero2 = prompt("ingrese el segundo numero para restar");
+      let result = restar(numero1, numero2);
+      alert(`el resultado de la resta es: ${result}`);
+    }
+    else if (op == 3) {
+      let numero1 = prompt("ingrese el primer numero para multiplicar");
+      let numero2 = prompt("ingrese el segundo numero para multiplicar");
+      let result = multi(numero1, numero2);
+      alert(`el resultado de la multiplicacion es: ${result}`);
+    }
+    else if (op == 4) {
+      let numero1 = prompt("ingrese el primer numero para dividr");
+      let numero2 = prompt("ingrese el segundo numero para dividir");
+      let result = dividir(numero1, numero2);
+      alert(`el resultado de la division es: ${result}`);
+    }
+    else {
+      alert("opcion incorrecta");
+    }
         
-        if (i == 5) { //break corta hasta la condicional y continue salta lo que hay en la condicional
-          continue;
-        }
-        document.write(i);
-      }
-      // FOR IN
-     let animales = ["gato","perro","pajaro"];
-
-     for(otro in animales){ //in devuelve la posicion de lo que hay en el arreglo 
-      document.write(otro + "<br>");
-     }
-    //for of
-     document.write("<br>");
-
-     for(otro of animales){ //devuelve el valor de la posicion
-      document.write(otro + "<br>");
-     }*/
-     //label
-     
-
-
+      
     </script>
   </body>
 </html>
